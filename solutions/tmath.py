@@ -5,20 +5,9 @@ helping me solve Project Euler Math Problems.
 
 I was recommended this assignment from Greg Gundersen.
 ============================================================================"""
+import math
+ 
 
-def seqFibonacci():
-	a, b = 0, 1
-	while True:
-		yield a
-		a, b = b, a + b
-
-def nthFibonacci(n):
-	if n == 0:
-		return 0
-	elif n == 1:
-		return 1
-	else:
-		return nthFibonacci(n-1) + nthFibonacci(n-2)
 
 def gen_Sieve_of_eratosthenes():
     """ Generate an infinite sequence of prime numbers.
@@ -59,3 +48,21 @@ def gen_Sieve_of_eratosthenes():
         
         q += 1
 
+
+def nthFibonacci(n):
+	if n == 0:
+		return 0
+	elif n == 1:
+		return 1
+	else:
+		return nthFibonacci(n-1) + nthFibonacci(n-2)
+
+def seqFibonacci():
+	a, b = 0, 1
+	while True:
+		yield a
+		a, b = b, a + b
+
+
+
+		
