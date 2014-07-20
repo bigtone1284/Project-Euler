@@ -11,6 +11,8 @@ Their difference is 2640.
 
 Find the same difference for the first 100 natural numbers.
 
+Note:  this solution was super easy.  
+
 ============================================================================"""
 
 
