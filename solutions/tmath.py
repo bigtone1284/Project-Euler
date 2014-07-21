@@ -5,7 +5,26 @@ helping me solve Project Euler Math Problems.
 
 I was recommended this assignment from Greg Gundersen.
 ============================================================================"""
+import math
 
+def factors(n):
+	factor = []
+	for i in range(1,int(math.sqrt(n))+1):
+		if n % i == 0:
+			factor.append(i)
+			factor.append(n/i)
+	return sorted(set(factor))
+
+def num_factors(n):
+	count = 0
+	for i in range(1,int(math.sqrt(n))+1):
+		if n % i == 0:
+			count+=2
+		if i == math.sqrt(n):
+			count -=1
+	return count
+
+	
 
 def gen_Sieve_of_eratosthenes():
     """ Generate an infinite sequence of prime numbers.
@@ -60,9 +79,20 @@ def seqFibonacci():
 	while True:
 		yield a
 		a, b = b, a + b
-
+		
 def pythogorean(a,b):
 	return (a**2 + b**2)**0.5
+	
+def gen_triangle_numbers():
+	tri, inc = 1, 1
+	yield 1
+	while True:
+		inc += 1
+		tri += inc
+		yield tri
+	
+def get_triangle_number(n):
+	return (n * (n+1))/2
 
 
 
