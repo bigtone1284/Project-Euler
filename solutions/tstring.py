@@ -1,7 +1,8 @@
 """============================================================================
-
 These are some functions I've written/borrowed/stolen (with attribution) for 
 helping me deal with strings.  
+
+I was recommended this assignment from Greg Gundersen.
 ============================================================================"""
 def is_palindrome(n):
 	if " " in str(n):
@@ -10,3 +11,6 @@ def is_palindrome(n):
  		return True
  	else:
  		return False
+ 		
+def int_to_str(n):
+	return str(n)
