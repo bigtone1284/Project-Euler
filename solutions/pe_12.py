@@ -32,6 +32,8 @@ prime factorization.
 
 import tmath as t
 
+import tmath as t
+
 def main():
 	gen = t.gen_triangle_numbers()
 	m = 0
