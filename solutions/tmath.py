@@ -5,8 +5,6 @@ helping me solve Project Euler Math Problems.
 
 I was recommended this assignment from Greg Gundersen.
 ============================================================================"""
-import math
- 
 
 
 def gen_Sieve_of_eratosthenes():
@@ -62,6 +60,9 @@ def seqFibonacci():
 	while True:
 		yield a
 		a, b = b, a + b
+
+def pythogorean(a,b):
+	return (a**2 + b**2)**0.5
 
 
 
