@@ -23,6 +23,11 @@ divisors?
 
 Solution:  First I wrote a function to generate triangle numbers.  Then I 
 wrote a function to find all factors of a number.  
+
+Note:  There is work to be done in optimizing this problem for finding factors.
+I have made the first minor improvement, using a range of 1-sqrt(n) and 
+counting two factors.  This can be made more optimal by using the exponents of
+prime factorization.  
 ============================================================================"""
 
 import tmath as t
