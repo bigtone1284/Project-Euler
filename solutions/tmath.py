@@ -8,6 +8,24 @@ I was recommended this assignment from Greg Gundersen.
 import math
 from collections import Counter
 
+def collatz_Seq(n, chains):
+	if n == 1: return 1
+	if n not in chains:
+		chains[n] = 1 + collatz_Seq(n/2 if n%2 == 0 else 3 * n + 1, chains)
+	return chains[n]
+	
+	
+
+def isEven(n):
+	if n % 2 == 0:
+		return True
+	else: return False
+
+def isOdd(n):
+	if isEven(n) == True:
+		return False
+	else: return True	
+
 def factors(n):
 	factor = []
 	for i in range(1,int(math.sqrt(n))+1):
