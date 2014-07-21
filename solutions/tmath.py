@@ -6,6 +6,7 @@ helping me solve Project Euler Math Problems.
 I was recommended this assignment from Greg Gundersen.
 ============================================================================"""
 import math
+from collections import Counter
 
 def factors(n):
 	factor = []
@@ -16,15 +17,35 @@ def factors(n):
 	return sorted(set(factor))
 
 def num_factors(n):
+	t = get_prime_factors(n)
+	primes_array = Counter(t).values()
+	primes_array = [i+1 for i in primes_array]
+	total = 1
+	for i in primes_array:
+		total *= i
+	return total
+	
+	"""
 	count = 0
 	for i in range(1,int(math.sqrt(n))+1):
 		if n % i == 0:
 			count+=2
 		if i == math.sqrt(n):
 			count -=1
-	return count
+	return count"""
 
-	
+def get_prime_factors(n):
+    primeFactors = []
+    for p in gen_Sieve_of_eratosthenes():
+        if p*p > n:
+            break
+        while n % p == 0:
+            primeFactors.append(p)
+            n //= p
+    if n > 1:
+        primeFactors.append(n)
+
+    return primeFactors	
 
 def gen_Sieve_of_eratosthenes():
     """ Generate an infinite sequence of prime numbers.
