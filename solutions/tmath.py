@@ -26,6 +26,12 @@ def isOdd(n):
 		return False
 	else: return True	
 
+def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n-1)
+        
 def factors(n):
 	factor = []
 	for i in range(1,int(math.sqrt(n))+1):
@@ -33,6 +39,14 @@ def factors(n):
 			factor.append(i)
 			factor.append(n/i)
 	return sorted(set(factor))
+
+def gen_fibonacci():
+    a,b = 0,1
+    yield a
+    yield b
+    while True:
+        a, b = b, a + b
+        yield b
 
 def num_factors(n):
 	t = get_prime_factors(n)
@@ -51,6 +65,9 @@ def num_factors(n):
 		if i == math.sqrt(n):
 			count -=1
 	return count"""
+
+def getFigurate(n, M):
+    return (factorial(M+n-1) / factorial(M-1)) / factorial(n)
 
 def get_prime_factors(n):
     primeFactors = []
