@@ -168,6 +168,15 @@ def gen_triangle_numbers():
 	
 def get_triangle_number(n):
 	return (n * (n+1))/2
+	
+def is_pan_digital(n):
+	pandigit = ""
+	for i in range(1,len(str(n))+1):
+		pandigit += str(i)
+	if sorted(str(n)) == sorted(pandigit):
+		return True
+	else:
+		return False
 
 
 
